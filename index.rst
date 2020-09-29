@@ -71,13 +71,15 @@ Welcome to the Nutanix Calm Bootcamp!
 
 
 
-This workbook accompanies an instructor-led session that introduces Nutanix Era and many common management tasks. Each section has a lesson and an exercise to give you hands-on practice. The instructor explains the exercises and answers any additional questions that you may have.
+This workbook accompanies an instructor-led session that introduces Nutanix Calm and many common management tasks. Each section has a lesson and an exercise to give you hands-on practice. The instructor explains the exercises and answers any additional questions that you may have.
 
 What's New
 ++++++++++
 
 - Workshop updated for the following software versions:
-    - AOS & PC 5.11.x
+    - AOS 5.18.x
+    - PC 2020.8.x
+    - Calm 3.0.x
 
 
 
@@ -138,7 +140,7 @@ For example:
 
 - **Cluster Name** - POC055
 - **Subnet** - 10.38.55.0
-- **Cluster IP** - 10.21.55.37 for the VIP of the Cluster
+- **Cluster IP** - 10.38.55.37 for the VIP of the Cluster
 
 
 Throughout the Workshop there are multiple instances where you will need to substitute *XYZ* with the correct octet for your subnet, for example:
@@ -167,18 +169,18 @@ Each cluster is configured with 2 VLANs which can be used for VMs:
     - VLAN
     - DHCP Scope
   * - Primary
-    - 10.21.\ *XYZ*\ .1/25
+    - 10.38.\ *XYZ*\ .1/25
     - 0
-    - 10.21.\ *XYZ*\ .50-10.21.\ *XYZ*\ .124
+    - 10.38.\ *XYZ*\ .50-10.38.\ *XYZ*\ .124
   * - Secondary
-    - 10.21.\ *XYZ*\ .129/25
+    - 10.38.\ *XYZ*\ .129/25
     - *XYZ1*
-    - 10.21.\ *XYZ*\ .132-10.21.\ *XYZ*\ .253
+    - 10.38.\ *XYZ*\ .132-10.38.\ *XYZ*\ .253
 
 Single Node HPOC Clusters
 -------------------------
 
-For some workshops we are using Single Node Clusters (SNC). Reason for this is to allow more people to have a dedicated cluster but still have enough free clusters for the bigger workshops including those for customers.
+For some workshops we are using Single Node Clusters (SNC). The reason for this is to allow more people to have a dedicated cluster but still have enough free clusters for the bigger workshops including those for customers.
 
 The network in the SNC config is using a /26 network. This splits the network address into four equal sizes that can be used for workshops. The below table describes the setup of the network in the four partitions. It provides essential information for the workshop with respect to the IP addresses and the services running at that IP address.
 
@@ -268,14 +270,14 @@ Credentials
   * - Prism Central
     - admin
     - *<Cluster Password>*
-  * - Controller VM
+  * - Controller VM (SSH)
     - nutanix
     - *<Cluster Password>*
-  * - Prism Central VM
+  * - Prism Central VM (SSH)
     - nutanix
     - *<Cluster Password>*
 
-Each cluster has a dedicated domain controller VM, **DC**, responsible for providing AD services for the **NTNXLAB.local** domain. The domain is populated with the following Users and Groups:
+Each cluster has a dedicated domain controller VM, **AutoAD**, responsible for providing AD services for the **NTNXLAB.local** domain. The domain is populated with the following Users and Groups:
 
 .. list-table::
   :widths: 25 35 40
@@ -288,16 +290,16 @@ Each cluster has a dedicated domain controller VM, **DC**, responsible for provi
     - Administrator
     - nutanix/4u
   * - SSP Admins
-    - adminuser01-adminuser25
+    - adminuser01 - adminuser25
     - nutanix/4u
   * - SSP Developers
-    - devuser01-devuser25
+    - devuser01 - devuser25
     - nutanix/4u
   * - SSP Power Users
-    - poweruser01-poweruser25
+    - poweruser01 - poweruser25
     - nutanix/4u
   * - SSP Basic Users
-    - basicuser01-basicuser25
+    - basicuser01 - basicuser25
     - nutanix/4u
 
 Access Instructions
@@ -338,6 +340,6 @@ For RTP:
 Nutanix Version Info
 ++++++++++++++++++++
 
-- **AHV Version** - AHV 20170830.337 (AOS 5.11+)
-- **AOS Version** - 5.11
-- **PC Version** - 5.11
+- **AHV Version** - AHV 20190916.276 (AOS 5.18.0.5+)
+- **AOS Version** - 5.18.0.6
+- **PC Version** - 2020.8.0.1
