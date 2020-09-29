@@ -25,7 +25,7 @@ In this lab you will leverage multiple pre-built Calm Blueprints to provision yo
       - **Name** - Administrators
       - **Role** - Project Admin
       - **Action** - Save
-   - Under **Infrastructure**, select **Select Provider > Nutanix**
+   - Under **Infrastructure**, choose **Select Provider > Nutanix**
    - Click **Select Clusters & Subnets**
    - Select *Your Assigned Cluster*
    - Under **Subnets**, select **Primary**, **Secondary**, and click **Confirm**
